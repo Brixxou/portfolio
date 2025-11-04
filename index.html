@@ -136,40 +136,10 @@
             d'apprentissage partagés au fil de l'eau.
           </p>
         </div>
-        <div class="card-grid">
-          <article class="card" data-reveal>
-            <span class="card__tag">Terraform</span>
-            <h3>Stratégies de gestion d'état à l'échelle</h3>
-            <p>
-              Retour sur la mise en place de workspaces, state locking et policies
-              Sentinel pour sécuriser nos pipelines IaC.
-            </p>
-            <a class="ghost-link" href="#!" aria-label="Lire la note Terraform"
-              >Lire la note</a
-            >
-          </article>
-          <article class="card" data-reveal data-reveal-delay="120">
-            <span class="card__tag">Kubernetes</span>
-            <h3>Observabilité : du cluster aux workloads</h3>
-            <p>
-              Comment j'ai structuré la stack Prometheus / Grafana / Loki pour
-              diagnostiquer rapidement et réduire le bruit des alertes.
-            </p>
-            <a class="ghost-link" href="#!" aria-label="Lire la note Observabilité"
-              >Lire la note</a
-            >
-          </article>
-          <article class="card" data-reveal data-reveal-delay="220">
-            <span class="card__tag">Culture</span>
-            <h3>Mettre en place un Runbook efficace</h3>
-            <p>
-              Checklist opérationnelle, critères de succès et lessons learned pour
-              professionnaliser la réponse aux incidents.
-            </p>
-            <a class="ghost-link" href="#!" aria-label="Lire la note Runbook"
-              >Lire la note</a
-            >
-          </article>
+        <div class="card-grid" data-notes-grid>
+          <p class="notes-placeholder" data-notes-empty>
+            Les notes arrivent bientôt. Revenez très vite !
+          </p>
         </div>
         <div class="panel__cta">
           <a class="primary-link" href="#!" aria-label="Accéder à toutes les notes"
@@ -280,7 +250,6 @@
         new Date().getFullYear();
 
       // Dévoile progressivement les sections lors du scroll.
-      const revealables = document.querySelectorAll("[data-reveal]");
       const observer = new IntersectionObserver(
         (entries, obs) => {
           entries.forEach((entry) => {
@@ -296,7 +265,69 @@
         }
       );
 
-      revealables.forEach((element) => observer.observe(element));
+      const observeReveal = (element) => observer.observe(element);
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((element) => observeReveal(element));
+
+      // Charge les notes publiques depuis data/notes.json pour automatiser l'affichage.
+      const notesGrid = document.querySelector("[data-notes-grid]");
+      const notesEmpty = document.querySelector("[data-notes-empty]");
+
+      async function loadNotes() {
+        if (!notesGrid) return;
+
+        try {
+          const response = await fetch("data/notes.json", { cache: "no-cache" });
+          if (!response.ok) {
+            throw new Error(`Chargement impossible (${response.status})`);
+          }
+
+          const notes = await response.json();
+
+          if (!Array.isArray(notes) || notes.length === 0) {
+            if (notesEmpty) {
+              notesEmpty.textContent = "Aucune note publiée pour le moment.";
+            }
+            return;
+          }
+
+          if (notesEmpty) {
+            notesEmpty.remove();
+          }
+
+          notes.forEach((note, index) => {
+            const card = document.createElement("article");
+            card.className = "card";
+            card.setAttribute("data-reveal", "");
+
+            if (index > 0) {
+              const delay = 120 + (index - 1) * 80;
+              card.setAttribute("data-reveal-delay", String(delay));
+            }
+
+            card.innerHTML = `
+              <span class="card__tag">${note.tag ?? "Note"}</span>
+              <h3>${note.title ?? "Titre prochainement"}</h3>
+              <p>${note.excerpt ?? "Résumé à venir."}</p>
+              <a class="ghost-link" href="${note.url ?? "#!"}" aria-label="Lire la note ${note.title ?? ""}">
+                Lire la note
+              </a>
+            `;
+
+            notesGrid.appendChild(card);
+            observeReveal(card);
+          });
+        } catch (error) {
+          console.error("Erreur de chargement des notes :", error);
+          if (notesEmpty) {
+            notesEmpty.textContent =
+              "Impossible de charger les notes pour le moment.";
+          }
+        }
+      }
+
+      loadNotes();
     </script>
   </body>
 </html>

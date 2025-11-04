@@ -1,0 +1,20 @@
+[
+  {
+    "tag": "Terraform",
+    "title": "Stratégies de gestion d'état à l'échelle",
+    "excerpt": "Retour sur la mise en place de workspaces, state locking et policies Sentinel pour sécuriser nos pipelines IaC.",
+    "url": "#!"
+  },
+  {
+    "tag": "Kubernetes",
+    "title": "Observabilité : du cluster aux workloads",
+    "excerpt": "Comment j'ai structuré la stack Prometheus / Grafana / Loki pour diagnostiquer rapidement et réduire le bruit des alertes.",
+    "url": "#!"
+  },
+  {
+    "tag": "Culture",
+    "title": "Mettre en place un Runbook efficace",
+    "excerpt": "Checklist opérationnelle, critères de succès et lessons learned pour professionnaliser la réponse aux incidents.",
+    "url": "#!"
+  }
+]
