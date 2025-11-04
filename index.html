@@ -8,6 +8,9 @@
       name="description"
       content="Portfolio sombre et minimaliste pour brixxou, ingénieur DevOps partageant ses notes et projets build in public."
     />
+    <script>
+      document.documentElement.classList.add("has-js");
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +20,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" data-reveal>
       <div class="brand">
         <span class="brand-dot"></span>
         <span class="brand-name">brixxou</span>
@@ -53,7 +56,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" data-reveal>
         <div class="hero__content">
           <p class="eyebrow">Build in public · DevOps & Cloud</p>
           <h1>
@@ -71,15 +74,15 @@
           </div>
         </div>
         <aside class="hero__highlights" aria-label="Mises en avant DevOps">
-          <div class="highlight">
+          <div class="highlight" data-reveal data-reveal-delay="100">
             <span class="highlight__label">Infra as Code</span>
             <p>Terraform · Pulumi · Ansible automatisent mes déploiements.</p>
           </div>
-          <div class="highlight">
+          <div class="highlight" data-reveal data-reveal-delay="180">
             <span class="highlight__label">Observabilité</span>
             <p>Prometheus, Loki et Grafana pour un monitoring proactif.</p>
           </div>
-          <div class="highlight">
+          <div class="highlight" data-reveal data-reveal-delay="260">
             <span class="highlight__label">Culture DevOps</span>
             <p>
               Intégration continue, delivery continu et feedback en boucle
@@ -89,7 +92,7 @@
         </aside>
       </section>
 
-      <section id="about" class="panel">
+      <section id="about" class="panel" data-reveal>
         <div class="section-header">
           <h2>Profil & Mission</h2>
           <p>
@@ -98,7 +101,7 @@
           </p>
         </div>
         <div class="about-grid">
-          <div class="about-card">
+          <div class="about-card" data-reveal>
             <h3>Ce qui m'anime</h3>
             <ul>
               <li>Industrialiser les déploiements multi-cloud.</li>
@@ -106,7 +109,7 @@
               <li>Documenter les bonnes pratiques et les retours d'expérience.</li>
             </ul>
           </div>
-          <div class="about-card">
+          <div class="about-card" data-reveal data-reveal-delay="120">
             <h3>Focus 2024</h3>
             <ul>
               <li>Automatisation des plateformes Kubernetes.</li>
@@ -114,7 +117,7 @@
               <li>Mise en place de golden paths pour les équipes produit.</li>
             </ul>
           </div>
-          <div class="about-card">
+          <div class="about-card" data-reveal data-reveal-delay="220">
             <h3>Au-delà du DevOps</h3>
             <ul>
               <li>Passion pour la transmission et le build in public.</li>
@@ -125,7 +128,7 @@
         </div>
       </section>
 
-      <section id="notes" class="panel">
+      <section id="notes" class="panel" data-reveal>
         <div class="section-header">
           <h2>Notes publiques</h2>
           <p>
@@ -134,7 +137,7 @@
           </p>
         </div>
         <div class="card-grid">
-          <article class="card">
+          <article class="card" data-reveal>
             <span class="card__tag">Terraform</span>
             <h3>Stratégies de gestion d'état à l'échelle</h3>
             <p>
@@ -145,7 +148,7 @@
               >Lire la note</a
             >
           </article>
-          <article class="card">
+          <article class="card" data-reveal data-reveal-delay="120">
             <span class="card__tag">Kubernetes</span>
             <h3>Observabilité : du cluster aux workloads</h3>
             <p>
@@ -156,7 +159,7 @@
               >Lire la note</a
             >
           </article>
-          <article class="card">
+          <article class="card" data-reveal data-reveal-delay="220">
             <span class="card__tag">Culture</span>
             <h3>Mettre en place un Runbook efficace</h3>
             <p>
@@ -178,16 +181,16 @@
         </div>
       </section>
 
-      <section id="projects" class="panel">
+      <section id="projects" class="panel" data-reveal>
         <div class="section-header">
-          <h2>Projets & Dides</h2>
+          <h2>Projets</h2>
           <p>
             Les projets en cours ou finalisés qui illustrent ma pratique DevOps
             et ma capacité à livrer des plateformes robustes.
           </p>
         </div>
         <div class="card-grid">
-          <article class="card">
+          <article class="card" data-reveal>
             <span class="card__tag">Platform Engineering</span>
             <h3>Backstage Platform Starter</h3>
             <p>
@@ -198,7 +201,7 @@
               >Détails du projet</a
             >
           </article>
-          <article class="card">
+          <article class="card" data-reveal data-reveal-delay="120">
             <span class="card__tag">Automation</span>
             <h3>Pipeline GitHub Actions multi-cloud</h3>
             <p>
@@ -212,7 +215,7 @@
               >Détails du projet</a
             >
           </article>
-          <article class="card">
+          <article class="card" data-reveal data-reveal-delay="220">
             <span class="card__tag">SRE</span>
             <h3>Observabilité as Code</h3>
             <p>
@@ -229,7 +232,7 @@
         </div>
       </section>
 
-      <section id="toolbox" class="panel panel--accent">
+      <section id="toolbox" class="panel panel--accent" data-reveal>
         <div class="section-header">
           <h2>Stack & Outillage</h2>
           <p>
@@ -238,23 +241,15 @@
           </p>
         </div>
         <div class="toolbox-grid">
-          <div class="toolbox-item">Terraform</div>
-          <div class="toolbox-item">AWS</div>
-          <div class="toolbox-item">GCP</div>
-          <div class="toolbox-item">Kubernetes</div>
-          <div class="toolbox-item">Helm</div>
-          <div class="toolbox-item">Docker</div>
-          <div class="toolbox-item">GitHub Actions</div>
-          <div class="toolbox-item">ArgoCD</div>
-          <div class="toolbox-item">Grafana</div>
-          <div class="toolbox-item">Prometheus</div>
-          <div class="toolbox-item">Vault</div>
-          <div class="toolbox-item">Pulumi</div>
+          <div class="toolbox-item" data-reveal>Docker</div>
+          <div class="toolbox-item" data-reveal data-reveal-delay="100">Kubernetes</div>
+          <div class="toolbox-item" data-reveal data-reveal-delay="180">CI/CD</div>
+          <div class="toolbox-item" data-reveal data-reveal-delay="260">AWS</div>
         </div>
       </section>
 
-      <section id="contact" class="panel">
-        <div class="cta-card">
+      <section id="contact" class="panel" data-reveal>
+        <div class="cta-card" data-reveal>
           <h2>On construit quelque chose ensemble ?</h2>
           <p>
             Disponible pour échanger sur vos besoins DevOps, audit de pipelines ou
@@ -272,7 +267,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" data-reveal>
       <p>
         © <span id="current-year"></span> brixxou · Build in public · DevOps &
         Platform Engineering
@@ -283,6 +278,25 @@
       // Met à jour automatiquement l'année affichée dans le footer.
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
+
+      // Dévoile progressivement les sections lors du scroll.
+      const revealables = document.querySelectorAll("[data-reveal]");
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          rootMargin: "0px 0px -10%",
+          threshold: 0.15,
+        }
+      );
+
+      revealables.forEach((element) => observer.observe(element));
     </script>
   </body>
 </html>
