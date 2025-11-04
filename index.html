@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brixxou — Portfolio DevOps</title>
+    <meta
+      name="description"
+      content="Portfolio sombre et minimaliste pour brixxou, ingénieur DevOps partageant ses notes et projets build in public."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">brixxou</span>
+      </div>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="#about">Profil</a>
+        <a href="#notes">Notes</a>
+        <a href="#projects">Projets</a>
+        <a href="#toolbox">Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a
+          class="ghost-link"
+          href="https://twitter.com/yourhandle"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Profil Twitter"
+          >Twitter</a
+        >
+        <a
+          class="ghost-link"
+          href="https://www.linkedin.com/in/yourprofile"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Profil LinkedIn"
+          >LinkedIn</a
+        >
+        <a class="primary-link" href="assets/CV_brixxou.pdf" target="_blank"
+          >Télécharger le CV</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Build in public · DevOps & Cloud</p>
+          <h1>
+            Construire des systèmes fiables,<br />
+            documenter chaque apprentissage.
+          </h1>
+          <p class="lead">
+            Ingénieur DevOps orienté plateforme, infrastructure as code et
+            pratiques SRE. Je partage mes notes d'apprentissage et mes projets
+            pour bâtir une trace publique de ma progression.
+          </p>
+          <div class="hero__actions">
+            <a class="primary-link" href="#notes">Explorer les notes</a>
+            <a class="ghost-link" href="#projects">Voir les projets</a>
+          </div>
+        </div>
+        <aside class="hero__highlights" aria-label="Mises en avant DevOps">
+          <div class="highlight">
+            <span class="highlight__label">Infra as Code</span>
+            <p>Terraform · Pulumi · Ansible automatisent mes déploiements.</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight__label">Observabilité</span>
+            <p>Prometheus, Loki et Grafana pour un monitoring proactif.</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight__label">Culture DevOps</span>
+            <p>
+              Intégration continue, delivery continu et feedback en boucle
+              courte.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="panel">
+        <div class="section-header">
+          <h2>Profil & Mission</h2>
+          <p>
+            Ma mission : rendre les équipes plus autonomes avec des pipelines
+            fiables, des plateformes stables et des environnements reproductibles.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Ce qui m'anime</h3>
+            <ul>
+              <li>Industrialiser les déploiements multi-cloud.</li>
+              <li>Améliorer l'observabilité et réduire le MTTR.</li>
+              <li>Documenter les bonnes pratiques et les retours d'expérience.</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Focus 2024</h3>
+            <ul>
+              <li>Automatisation des plateformes Kubernetes.</li>
+              <li>FinOps appliqué aux workloads cloud.</li>
+              <li>Mise en place de golden paths pour les équipes produit.</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Au-delà du DevOps</h3>
+            <ul>
+              <li>Passion pour la transmission et le build in public.</li>
+              <li>Veille continue sur les pratiques SRE et Platform Engineering.</li>
+              <li>Création de guides techniques accessibles.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="notes" class="panel">
+        <div class="section-header">
+          <h2>Notes publiques</h2>
+          <p>
+            Une sélection d'idées, de retours d'expérience et de résumés
+            d'apprentissage partagés au fil de l'eau.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <span class="card__tag">Terraform</span>
+            <h3>Stratégies de gestion d'état à l'échelle</h3>
+            <p>
+              Retour sur la mise en place de workspaces, state locking et policies
+              Sentinel pour sécuriser nos pipelines IaC.
+            </p>
+            <a class="ghost-link" href="#!" aria-label="Lire la note Terraform"
+              >Lire la note</a
+            >
+          </article>
+          <article class="card">
+            <span class="card__tag">Kubernetes</span>
+            <h3>Observabilité : du cluster aux workloads</h3>
+            <p>
+              Comment j'ai structuré la stack Prometheus / Grafana / Loki pour
+              diagnostiquer rapidement et réduire le bruit des alertes.
+            </p>
+            <a class="ghost-link" href="#!" aria-label="Lire la note Observabilité"
+              >Lire la note</a
+            >
+          </article>
+          <article class="card">
+            <span class="card__tag">Culture</span>
+            <h3>Mettre en place un Runbook efficace</h3>
+            <p>
+              Checklist opérationnelle, critères de succès et lessons learned pour
+              professionnaliser la réponse aux incidents.
+            </p>
+            <a class="ghost-link" href="#!" aria-label="Lire la note Runbook"
+              >Lire la note</a
+            >
+          </article>
+        </div>
+        <div class="panel__cta">
+          <a class="primary-link" href="#!" aria-label="Accéder à toutes les notes"
+            >Toutes les notes</a
+          >
+          <span class="panel__hint"
+            >Importez votre contenu depuis Notion, Obsidian ou un blog existant.</span
+          >
+        </div>
+      </section>
+
+      <section id="projects" class="panel">
+        <div class="section-header">
+          <h2>Projets & Dides</h2>
+          <p>
+            Les projets en cours ou finalisés qui illustrent ma pratique DevOps
+            et ma capacité à livrer des plateformes robustes.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <span class="card__tag">Platform Engineering</span>
+            <h3>Backstage Platform Starter</h3>
+            <p>
+              Bootstrap d'un portail développeur avec Backstage, automatisé via
+              Terraform et ArgoCD pour accélérer l'onboarding produit.
+            </p>
+            <a class="ghost-link" href="#!" aria-label="Voir Backstage Platform"
+              >Détails du projet</a
+            >
+          </article>
+          <article class="card">
+            <span class="card__tag">Automation</span>
+            <h3>Pipeline GitHub Actions multi-cloud</h3>
+            <p>
+              Pipelines parametrés pour déployer sur AWS et GCP avec stratégies
+              de release progressive et scans de sécurité intégrés.
+            </p>
+            <a
+              class="ghost-link"
+              href="#!"
+              aria-label="Voir pipeline GitHub Actions"
+              >Détails du projet</a
+            >
+          </article>
+          <article class="card">
+            <span class="card__tag">SRE</span>
+            <h3>Observabilité as Code</h3>
+            <p>
+              Définition declarative des dashboards, alertes et SLOs via Grafana
+              Terraform Provider pour homogénéiser le suivi produit.
+            </p>
+            <a
+              class="ghost-link"
+              href="#!"
+              aria-label="Voir Observabilité as Code"
+              >Détails du projet</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section id="toolbox" class="panel panel--accent">
+        <div class="section-header">
+          <h2>Stack & Outillage</h2>
+          <p>
+            Les outils que j'utilise le plus souvent sur mes missions DevOps et
+            qui structurent mon approche.
+          </p>
+        </div>
+        <div class="toolbox-grid">
+          <div class="toolbox-item">Terraform</div>
+          <div class="toolbox-item">AWS</div>
+          <div class="toolbox-item">GCP</div>
+          <div class="toolbox-item">Kubernetes</div>
+          <div class="toolbox-item">Helm</div>
+          <div class="toolbox-item">Docker</div>
+          <div class="toolbox-item">GitHub Actions</div>
+          <div class="toolbox-item">ArgoCD</div>
+          <div class="toolbox-item">Grafana</div>
+          <div class="toolbox-item">Prometheus</div>
+          <div class="toolbox-item">Vault</div>
+          <div class="toolbox-item">Pulumi</div>
+        </div>
+      </section>
+
+      <section id="contact" class="panel">
+        <div class="cta-card">
+          <h2>On construit quelque chose ensemble ?</h2>
+          <p>
+            Disponible pour échanger sur vos besoins DevOps, audit de pipelines ou
+            tout simplement partager des idées.
+          </p>
+          <div class="cta-actions">
+            <a class="primary-link" href="mailto:contact@brixxou.dev"
+              >contact@brixxou.dev</a
+            >
+            <a class="ghost-link" href="https://cal.com/your-handle" target="_blank"
+              >Planifier un call</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        © <span id="current-year"></span> brixxou · Build in public · DevOps &
+        Platform Engineering
+      </p>
+    </footer>
+
+    <script>
+      // Met à jour automatiquement l'année affichée dans le footer.
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
